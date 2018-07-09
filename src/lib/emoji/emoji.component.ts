@@ -16,7 +16,7 @@ export interface Emoji {
   tooltip: boolean;
   skin: 1 | 2 | 3 | 4 | 5 | 6;
   sheetSize: 16 | 20 | 32 | 64;
-  set: 'apple' | 'google' | 'twitter' | 'emojione' | 'messenger' | 'facebook' | '';
+  set: 'apple' | 'google' | 'twitter' | 'messenger' | 'facebook' | '';
   size: number;
   emoji: string | EmojiData;
   backgroundImageFn: (set: string, sheetSize: Emoji['sheetSize']) => string;
@@ -74,7 +74,7 @@ export class EmojiComponent implements OnChanges, Emoji {
   // TODO: replace 4.0.3 w/ dynamic get verison from emoji-datasource in package.json
   @Input()
   backgroundImageFn: Emoji['backgroundImageFn'] = (set: string, sheetSize: number) =>
-    `https://unpkg.com/emoji-datasource-${this.set}@4.0.4/img/${
+    `https://unpkg.com/emoji-datasource-${this.set}@4.1.0/img/${
       this.set
     }/sheets-256/${this.sheetSize}.png`
 

@@ -1,5 +1,5 @@
 const emojiData = require('emoji-datasource');
-import * as emojiLib from 'emojilib';
+const emojiLib = require('emojilib');
 import * as fs from 'fs';
 import * as inflection from 'inflection';
 import * as stringifyObject from 'stringify-object';
@@ -7,7 +7,6 @@ import * as stringifyObject from 'stringify-object';
 const categories: any[] = [];
 const emojis: any[] = [];
 const skins: any[] = [];
-const short_names: any = {};
 const categoriesIndex: any = {};
 
 const catPairs = [
@@ -24,7 +23,6 @@ const sets = [
   'apple',
   'google',
   'twitter',
-  'emojione',
   'facebook',
   'messenger',
 ];

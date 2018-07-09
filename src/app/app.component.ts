@@ -24,7 +24,6 @@ const CUSTOM_EMOJIS = [
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles: [],
 })
 export class AppComponent {
   themes = [
@@ -32,7 +31,6 @@ export class AppComponent {
     'apple',
     'google',
     'twitter',
-    'emojione',
     'messenger',
     'facebook',
   ];

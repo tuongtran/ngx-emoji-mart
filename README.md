@@ -58,7 +58,7 @@ Or angular-cli can also include it via angular-cli.json
 use component
 ```html
 <emoji-mart title="Pick your emoji…" emoji="point_up"></emoji-mart>
-<emoji-mart set="emojione"></emoji-mart>
+<emoji-mart set="apple"></emoji-mart>
 <emoji-mart (emojiClick)="addEmoji($event)"></emoji-mart>
 <emoji-mart [style]="{ position: 'absolute', bottom: '20px', right: '20px' }"></emoji-mart>
 <emoji-mart [i18n]="{ search: 'Recherche', categories: { search: 'Résultats de recherche', recent: 'Récents' } }"></emoji-mart>
@@ -79,7 +79,7 @@ use component
 | **perLine**            | `9`                       | Number of emojis per line. While there’s no minimum or maximum, this will affect the picker’s width. This will set _Frequently Used_ length as well (`perLine * 4`) |
 | **i18n**               | [`{…}`](#i18n)            | [An object](#i18n) containing localized strings                                                                                                                       |
 | **native**             | `false`                   | Renders the native unicode emoji                                                                                                                                      |
-| **set**                | `apple`                   | The emoji set: `'apple', 'google', 'twitter', 'emojione', 'messenger', 'facebook'`                                                                                    |
+| **set**                | `apple`                   | The emoji set: `'apple', 'google', 'twitter', 'messenger', 'facebook'`                                                                                    |
 | **sheetSize**          | `64`                      | The emoji [sheet size](#sheet-sizes): `16, 20, 32, 64`                                                                                                                |
 | **backgroundImageFn**  | `((set, sheetSize) => …)` | A Fn that returns that image sheet to use for emojis. Useful for avoiding a request if you have the sheet locally.                                                    |
 | **emojisToShowFilter** | `((emoji) => true)`       | A Fn to choose whether an emoji should be displayed or not                                                                                                            |
@@ -120,10 +120,6 @@ Sheets are served from [unpkg](https://unpkg.com), a global CDN that serves file
 | apple     | 20        | 459 KB  |
 | apple     | 32        | 1.08 MB |
 | apple     | 64        | 2.94 MB |
-| emojione  | 16        | 315 KB  |
-| emojione  | 20        | 435 KB  |
-| emojione  | 32        | 1020 KB |
-| emojione  | 64        | 2.33 MB |
 | facebook  | 16        | 322 KB  |
 | facebook  | 20        | 439 KB  |
 | facebook  | 32        | 1020 KB |
@@ -198,9 +194,9 @@ import { EmojiModule } from '@ctrl/ngx-emoji-mart/ngx-emoji'
 | **(emojiLeave)**                             |          |                                                                                                      | Params: `{ emoji, $event }`                                                                                        |
 | **(emojiOver)**                              |          |                                                                                                      | Params: `{ emoji, $event }`                                                                                        |
 | [**fallback**](#unsupported-emojis-fallback) |          |                                                                                                      | Params: `(emoji) => {}`                                                                                            |
-| **set**                                      |          | `apple`                                                                                              | The emoji set: `'apple', 'google', 'twitter', 'emojione'`                                                          |
+| **set**                                      |          | `apple`                                                                                              | The emoji set: `'apple', 'google', 'twitter'`                                                          |
 | **sheetSize**                                |          | `64`                                                                                                 | The emoji [sheet size](#sheet-sizes): `16, 20, 32, 64`                                                             |
-| **backgroundImageFn**                        |          | `` ((set, sheetSize) => `https://unpkg.com/emoji-datasource@3.0.0/sheet_${set}_${sheetSize}.png`) `` | A Fn that returns that image sheet to use for emojis. Useful for avoiding a request if you have the sheet locally. |
+| **backgroundImageFn**                        |          | `` ((set, sheetSize) => `https://unpkg.com/emoji-datasource@4.1.0/sheet_${set}_${sheetSize}.png`) `` | A Fn that returns that image sheet to use for emojis. Useful for avoiding a request if you have the sheet locally. |
 | **skin**                                     |          | `1`                                                                                                  | Skin color: `1, 2, 3, 4, 5, 6`                                                                                     |
 | **tooltip**                                  |          | `false`                                                                                              | Show emoji short name when hovering (title)                                                                        |  |
 | **hideObsolete**                             |          | `false`                                                                                              | Hides ex: "cop" emoji in favor of female and male emoji                                                            |  |
